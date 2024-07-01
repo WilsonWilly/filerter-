@@ -18,3 +18,5 @@ function CardsGroup() {
 }
 
 export default CardsGroup;
+
+// grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6
