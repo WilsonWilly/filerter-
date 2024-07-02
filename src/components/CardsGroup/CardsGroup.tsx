@@ -1,8 +1,13 @@
+'use client';
+import { useAppSelector } from '@/app/lib/hooks';
 import Miniature from './Miniature';
 
-import { boardGames } from '../../assets/data';
+// import { boardGames } from '../../assets/data';
 
 function CardsGroup() {
+  const boardGames = useAppSelector((state) => state);
+  console.log(boardGames);
+
   return (
     <div className="flex flex-1 flex-wrap justify-around">
       {boardGames.map((boardGame) => (

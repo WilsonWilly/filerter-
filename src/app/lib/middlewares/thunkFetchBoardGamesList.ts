@@ -5,5 +5,6 @@ const thunkFetchBoardGamesList = createAsyncThunk(
   'FETCH_BOARDGAMES_LIST',
   async () => {
     const response = await axios.get('');
+    return {};
   }
 );
