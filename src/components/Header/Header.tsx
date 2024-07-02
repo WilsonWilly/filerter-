@@ -1,6 +1,21 @@
 import Image from 'next/image';
+import React from 'react';
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Input,
+  DropdownItem,
+  DropdownTrigger,
+  Dropdown,
+  DropdownMenu,
+  Avatar,
+} from '@nextui-org/react';
+import SearchIcon from '@/components/SearchIcon';
 
-function Header() {
+const AppLogo = () => {
   return (
     <header className="flex justify-between items-center p-5 bg-black text-white">
       <div>
@@ -19,6 +34,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

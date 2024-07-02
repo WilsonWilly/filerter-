@@ -5,6 +5,9 @@ interface MiniatureProps {
   name: string;
   description: string;
   picture: string;
+  name: string;
+  description: string;
+  picture: string;
 }
 
 function Miniature({ name, description, picture }: MiniatureProps) {
