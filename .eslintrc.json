@@ -1,6 +1,5 @@
 {
   "extends": [
-
     "prettier",
     "next/core-web-vitals",
     "airbnb",
@@ -16,11 +15,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "react", "prettier"],
   "rules": {
     "linebreak-style": "off",
     "prettier/prettier": [
@@ -34,7 +29,7 @@
     "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off",
     "react/display-name": "off",
-    "import/no-extraneous-dependencies":  "off",
+    "import/no-extraneous-dependencies": "off",
     "react/function-component-definition": [
       "error",
       {
@@ -49,3 +44,7 @@
   },
   "settings": {
     "react": {
+      "version": "detect"
+    }
+  }
+}
