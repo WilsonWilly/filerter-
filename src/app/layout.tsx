@@ -1,8 +1,9 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/Header/Header';
+import { siteConfig } from '@/config/site';
 
 const inter = Inter({ subsets: ['latin'] });
 const adventureFont = localFont({

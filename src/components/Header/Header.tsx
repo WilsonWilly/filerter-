@@ -15,7 +15,7 @@ import {
 } from '@nextui-org/react';
 import SearchIcon from '@/components/SearchIcon';
 
-const AppLogo = () => {
+const Header = () => {
   return (
     <header className="flex justify-between items-center p-5 bg-black text-white">
       <div>
