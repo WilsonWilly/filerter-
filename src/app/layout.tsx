@@ -1,8 +1,10 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/Header/Header';
+import { siteConfig } from '@/config/site';
+import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
 const adventureFont = localFont({
@@ -13,21 +15,34 @@ const adventureFontHollow = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'O Jeux de Société',
-  description: 'Découvrez, partagez et jouez !',
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="fr">
       <body className={adventureFont.className}>
         <div className="md:container md:mx-auto md:w-[85%] containerMain">
           <Header />
-          {children}
+          <Providers>{children}</Providers>
         </div>
       </body>
     </html>

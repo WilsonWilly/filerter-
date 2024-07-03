@@ -16,19 +16,22 @@
   }
 }
 
+/* TODO Mettre les variables a la place des couleurs en fixe */
+
 body {
-  background-color: rgb(var(--foreground-rgb));
+  background-color: #15485C;
+  width: 100%;
 }
 
 .containerMain {
-  color: rgb(var(--foreground));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end))
-    )
-    rgb(var(--background-start));
-}
+  /* From https://css.glass */
+background:linear-gradient(#F36337, #FBC998);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.2px);
+-webkit-backdrop-filter: blur(4.2px);
+border: 1px solid rgba(255, 255, 255, 0.27);
+  }
 
 @layer utilities {
   .text-balance {
