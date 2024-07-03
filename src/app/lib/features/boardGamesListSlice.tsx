@@ -7,12 +7,14 @@ import { thunkFetchBoardGamesList } from '../middlewares/thunkFetchBoardGamesLis
 interface BoardGamesState {
   boardGamesList: IBoardGame[];
   error: string;
+  isLoading: boolean;
 }
 
 // State initial sans jeux
 const initialState: BoardGamesState = {
-  boardGamesList: boardGamesList,
+  boardGamesList: [],
   error: '',
+  isLoading: false,
 };
 
 export const boardGamesSlice = createSlice({
@@ -23,12 +25,15 @@ export const boardGamesSlice = createSlice({
     builder
       .addCase(thunkFetchBoardGamesList.pending, (state) => {
         // Action à faire pendant le chargement de la requête API
+        state.isLoading = true;
       })
       .addCase(thunkFetchBoardGamesList.fulfilled, (state, action) => {
         // Action à faire si l'appel API est un succés
+        state.boardGamesList = action.payload;
       })
       .addCase(thunkFetchBoardGamesList.rejected, (state, action) => {
         // Action à faire si l'appel API est un échec
+        console.log('erreur appel API');
       });
   },
 });
