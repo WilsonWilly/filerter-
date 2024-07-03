@@ -49,7 +49,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {key === 'Inyagram' && '👨‍💻 '}
+                    {key === 'Instagram' && '👨‍💻 '}
                     {key === 'twitter' && '🐦 '}
                     {key === 'docs' && '📚 '}
                     {key === 'Facebook' && '💬 '}
