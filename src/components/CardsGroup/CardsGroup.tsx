@@ -1,8 +1,21 @@
+'use client';
+import { useAppDispatch, useAppSelector } from '@/app/lib/hooks';
 import Miniature from './Miniature';
+import { RootState } from '@reduxjs/toolkit/query';
+import { useEffect } from 'react';
+import { thunkFetchBoardGamesList } from '@/app/lib/middlewares/thunkFetchBoardGamesList';
 
-import { boardGames } from '../../assets/data';
+// import { boardGames } from '../../assets/data';
 
 function CardsGroup() {
+  const dispatch = useAppDispatch();
+  const boardGames = useAppSelector((state) => state.boardGames.boardGamesList);
+  console.log(boardGames);
+
+  useEffect(() => {
+    dispatch(thunkFetchBoardGamesList());
+  }, []);
+
   return (
     <div className="flex flex-1 flex-wrap justify-around">
       {boardGames.map((boardGame) => (
@@ -18,5 +31,3 @@ function CardsGroup() {
 }
 
 export default CardsGroup;
-
-// grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6

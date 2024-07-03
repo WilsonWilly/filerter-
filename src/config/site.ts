@@ -1,23 +1,27 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: ' O JeuxDeSociété',
-  description: ' Découvrez, partagez et jouez ! ',
+  name: "O'Jeux de Société",
+  description: 'Make beautiful websites regardless of your design experience.',
   navItems: [
     {
       label: 'Home',
       href: '/',
     },
     {
-      label: 'donnation',
-      href: '/donation',
+      label: 'Docs',
+      href: '/docs',
     },
     {
-      label: 'contact',
-      href: '/contacts',
+      label: 'Pricing',
+      href: '/pricing',
     },
     {
-      label: 'A Propos',
+      label: 'Blog',
+      href: '/blog',
+    },
+    {
+      label: 'About',
       href: '/about',
     },
   ],
@@ -56,8 +60,10 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: 'https://x.com/',
-    discord: 'https://discord.com/',
-    sponsor: '',
+    github: 'https://github.com/nextui-org/nextui',
+    twitter: 'https://twitter.com/getnextui',
+    docs: 'https://nextui.org',
+    discord: 'https://discord.gg/9b6yyZKmH4',
+    sponsor: 'https://patreon.com/jrgarciadev',
   },
 };
