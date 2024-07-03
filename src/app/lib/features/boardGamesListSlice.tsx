@@ -14,7 +14,7 @@ interface BoardGamesState {
 const initialState: BoardGamesState = {
   boardGamesList: [],
   error: '',
-  isLoading: false,
+  isLoading: true,
 };
 
 export const boardGamesSlice = createSlice({
@@ -30,10 +30,12 @@ export const boardGamesSlice = createSlice({
       .addCase(thunkFetchBoardGamesList.fulfilled, (state, action) => {
         // Action à faire si l'appel API est un succés
         state.boardGamesList = action.payload;
+        state.isLoading = false;
       })
       .addCase(thunkFetchBoardGamesList.rejected, (state, action) => {
         // Action à faire si l'appel API est un échec
-        console.log('erreur appel API');
+        console.log('erreur appel API : ', action);
+        state.isLoading = false;
       });
   },
 });
