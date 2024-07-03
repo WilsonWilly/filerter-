@@ -34,7 +34,7 @@ export const boardGamesSlice = createSlice({
       })
       .addCase(thunkFetchBoardGamesList.rejected, (state, action) => {
         // Action à faire si l'appel API est un échec
-        console.log('erreur appel API');
+        console.log('erreur appel API : ', action);
         state.isLoading = false;
       });
   },

@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import Link from 'next/link';
+import { useEffect } from 'react';
 
 export default function Error({
   error,
@@ -16,7 +17,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div>
+    <div className="text-center h-full">
       <h2>Something went wrong!</h2>
       <button
         onClick={
@@ -26,6 +27,8 @@ export default function Error({
       >
         Try again
       </button>
+      <p> - </p>
+      <Link href="/">Home</Link>
     </div>
   );
 }
