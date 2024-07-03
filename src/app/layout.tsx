@@ -5,6 +5,10 @@ import './globals.css';
 import Header from '@/components/Header/Header';
 import { siteConfig } from '@/config/site';
 
+import Footer from '@/components/Footer/Footer';
+
+import { Navbar } from '@/components/Navbar/Navbar';
+
 const inter = Inter({ subsets: ['latin'] });
 const adventureFont = localFont({
   src: '../assets/fonts/adventure/Adventure.otf',
@@ -41,7 +45,9 @@ export default function RootLayout({
       <body className={adventureFont.className}>
         <div className="md:container md:mx-auto md:w-[85%] containerMain">
           <Header />
+          <Navbar />
           {children}
+          <Footer />
         </div>
       </body>
     </html>

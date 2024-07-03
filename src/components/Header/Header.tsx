@@ -19,11 +19,10 @@ const Header = () => {
   return (
     <Navbar isBordered>
       <NavbarContent justify="start">
-
         <NavbarBrand className="mr-4">
-          <p className="hidden sm:block font-bold text-inherit">ACME</p>
+          <p className="hidden sm:block font-bold text-inherit">Jeux</p>
         </NavbarBrand>
-        
+
         <NavbarContent className="hidden sm:flex gap-3">
           <NavbarItem>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
