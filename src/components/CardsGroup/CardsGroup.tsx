@@ -1,11 +1,12 @@
 'use client';
 import { useAppSelector } from '@/app/lib/hooks';
 import Miniature from './Miniature';
+import { RootState } from '@reduxjs/toolkit/query';
 
 // import { boardGames } from '../../assets/data';
 
 function CardsGroup() {
-  const boardGames = useAppSelector((state) => state);
+  const boardGames = useAppSelector((state) => state.boardGames.boardGamesList);
   console.log(boardGames);
 
   return (
@@ -23,5 +24,3 @@ function CardsGroup() {
 }
 
 export default CardsGroup;
-
-// grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6

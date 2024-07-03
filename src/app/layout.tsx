@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/Header/Header';
 import { siteConfig } from '@/config/site';
+import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
 const adventureFont = localFont({
@@ -41,7 +42,7 @@ export default function RootLayout({
       <body className={adventureFont.className}>
         <div className="md:container md:mx-auto md:w-[85%] containerMain">
           <Header />
-          {children}
+          <Providers>{children}</Providers>
         </div>
       </body>
     </html>

@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, Image, CardFooter } from '@nextui-org/react';
 import { Suspense } from 'react';
 
@@ -34,5 +36,3 @@ function Miniature({ name, description, picture }: MiniatureProps) {
 }
 
 export default Miniature;
-
-// sm:w-40 sm:h-40 md:w-50 md:h-50 lg:w-60 lg:h-60
