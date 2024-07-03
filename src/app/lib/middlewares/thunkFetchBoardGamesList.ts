@@ -6,7 +6,7 @@ export const thunkFetchBoardGamesList = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get(
-        'http://virginie-prost.vpnuser.lan:8000/api/games/page1'
+        'http://virginie-prost.vpnuser.lan:8000/api/games/page/1'
       );
       return response.data;
     } catch (error) {}
