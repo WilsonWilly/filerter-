@@ -1,4 +1,6 @@
+// Composant qui fait son rendu côté client
 'use client';
+
 import { useAppDispatch, useAppSelector } from '@/app/lib/hooks';
 import Miniature from './Miniature';
 import { RootState } from '@reduxjs/toolkit/query';
@@ -17,6 +19,7 @@ function CardsGroup() {
   // On récupère l'état de chargement depuis le store Redux
   const isLoading = useAppSelector((state) => state.boardGames.isLoading);
 
+  // On lance l'appel API au 1er chargement de la page
   useEffect(() => {
     dispatch(thunkFetchBoardGamesList());
   }, []);

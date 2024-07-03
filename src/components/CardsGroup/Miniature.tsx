@@ -1,5 +1,3 @@
-'use client';
-
 import { Card, Image, CardFooter } from '@nextui-org/react';
 import { Suspense } from 'react';
 
