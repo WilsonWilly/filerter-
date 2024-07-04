@@ -13,8 +13,8 @@ import {
   Select,
   SelectItem,
 } from '@nextui-org/react';
-import { detailsGame } from '@/assets/detailsGame';
-import Rating from '@/components/Rating/Rating';
+import { detailsGame } from '../../assets/detailsGame';
+import Rating from '../Rating/Rating';
 
 export default function ModalOpinion() {
   const [isOpen, setIsOpen] = useState(false);
