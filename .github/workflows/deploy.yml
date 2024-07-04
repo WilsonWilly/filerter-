@@ -1,4 +1,4 @@
-# fichier qui va permettre de mettre a jour le site de facon automatique quand une modifiction sera push sur la branch main.
+# fichier qui va permettre de mettre a jour le site de facon automatique quand une modification sera push sur la branche main.
 name: Deploy Next.js App
 
 on:
@@ -19,12 +19,22 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
       - name: Install pnpm
         run: |
           npm install -g pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --prod
 
       - name: Build the project
         run: pnpm run build
