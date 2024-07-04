@@ -5,8 +5,12 @@ import { Button } from '@nextui-org/react';
 import { Heart, PlusSquare } from 'react-feather';
 import ModalOpinion from '@/components/Modal/ModalOpinion';
 import Rating from '@/components/Rating/Rating';
+import { useAppSelector } from '@/app/lib/hooks';
 
 export default function BoardGame() {
+  const boardGames = useAppSelector((state) => state.boardGames);
+  console.log(boardGames);
+
   return (
     <main className="flex text-sm flex-col items-center justify-center p-2 text-black ">
       <section className="w-full flex justify-between mb-1">
@@ -32,7 +36,7 @@ export default function BoardGame() {
         <p>Age minimum : {detailsGame.game.minAge} ans</p>
         <p>Temps d'une partie : {detailsGame.game.time}</p>
         <p>
-          Nombre de joeur : de {detailsGame.game.minPlayers} à
+          Nombre de joueur(s) : de {detailsGame.game.minPlayers} à
           {detailsGame.game.maxPlayers} Joueurs
         </p>
       </section>
@@ -43,7 +47,7 @@ export default function BoardGame() {
             className=" border border-black  active:black"
             startContent={<PlusSquare />}
           >
-            Ajouter à ma bibliothéque
+            Ajouter à ma ludothéque
           </Button>
 
           <Button
