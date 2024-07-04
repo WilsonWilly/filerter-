@@ -34,7 +34,10 @@ jobs:
           npm install -g pnpm
 
       - name: Install dependencies
-        run: pnpm install --prod
+        run: pnpm install --dev
+
+      - name: Verify TypeScript installation
+        run: pnpm exec tsc --version
 
       - name: Build the project
         run: pnpm run build
