@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '20'
 
       - name: Install pnpm
         run: |
@@ -38,6 +38,6 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh -o StrictHostKeyChecking=no $USERNAME@$SERVER "rm -rf ~/app && mkdir -p ~/app"
-          scp -r ./* $USERNAME@$SERVER:~/app
-          ssh $USERNAME@$SERVER "cd ~/app && pnpm install && pnpm run build && pm2 restart ecosystem.config.js --env production"
+          ssh -o StrictHostKeyChecking=no $USERNAME@$SERVER "rm -rf /var/www/front_o_jeux_de_societe && mkdir -p /var/www/front_o_jeux_de_societe"
+          scp -r ./* $USERNAME@$SERVER:/var/www/front_o_jeux_de_societe
+          ssh $USERNAME@$SERVER "cd /var/www/front_o_jeux_de_societe && pnpm install && pnpm run build && pm2 restart ecosystem.config.js --env production"
