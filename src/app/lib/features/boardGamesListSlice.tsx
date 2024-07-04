@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { IBoardGame } from '../../../types/boardGame';
+import { createSlice } from "@reduxjs/toolkit";
+import { IBoardGame } from "../../../types/boardGame";
 
-import { boardGamesList } from '@/assets/data2';
-import { thunkFetchBoardGamesList } from '../middlewares/thunkFetchBoardGamesList';
+// import { boardGamesList } from '@/assets/data2';
+import { thunkFetchBoardGamesList } from "../middlewares/thunkFetchBoardGamesList";
 
 interface BoardGamesState {
   boardGamesList: IBoardGame[];
@@ -13,12 +13,12 @@ interface BoardGamesState {
 // State initial sans jeux
 const initialState: BoardGamesState = {
   boardGamesList: [],
-  error: '',
+  error: "",
   isLoading: true,
 };
 
 export const boardGamesSlice = createSlice({
-  name: 'boardgames list',
+  name: "boardgames list",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -34,7 +34,7 @@ export const boardGamesSlice = createSlice({
       })
       .addCase(thunkFetchBoardGamesList.rejected, (state, action) => {
         // Action à faire si l'appel API est un échec
-        console.log('erreur appel API : ', action);
+        console.log("erreur appel API : ", action);
         state.isLoading = false;
       });
   },

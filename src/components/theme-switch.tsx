@@ -1,17 +1,16 @@
-'use client';
+"use client";
 
-import { FC } from 'react';
-import { VisuallyHidden } from 'react-aria';
-import { SwitchProps, useSwitch } from '@nextui-org/react';
-import { useTheme } from 'next-themes';
-import { useIsSSR } from 'react-aria';
-import clsx from 'clsx';
+import { FC } from "react";
+import { VisuallyHidden, useIsSSR } from "react-aria";
+import { SwitchProps, useSwitch } from "@nextui-org/react";
+import { useTheme } from "next-themes";
+import clsx from "clsx";
 
-import { SunFilledIcon, MoonFilledIcon } from '../components/icons';
+import { SunFilledIcon, MoonFilledIcon } from "./icons";
 
 export interface ThemeSwitchProps {
   className?: string;
-  classNames?: SwitchProps['classNames'];
+  classNames?: SwitchProps["classNames"];
 }
 export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   className,
@@ -21,7 +20,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   const isSSR = useIsSSR();
 
   const onChange = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light');
+    theme === "light" ? setTheme("dark") : setTheme("light");
   };
 
   const {
@@ -32,8 +31,8 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
     getInputProps,
     getWrapperProps,
   } = useSwitch({
-    isSelected: theme === 'light' || isSSR,
-    'aria-label': `Switch to ${theme === 'light' || isSSR ? 'dark' : 'light'} mode`,
+    isSelected: theme === "light" || isSSR,
+    "aria-label": `Switch to ${theme === "light" || isSSR ? "dark" : "light"} mode`,
     onChange,
   });
 
@@ -41,7 +40,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
     <Component
       {...getBaseProps({
         className: clsx(
-          'px-px transition-opacity hover:opacity-80 cursor-pointer',
+          "px-px transition-opacity hover:opacity-80 cursor-pointer",
           className,
           classNames?.base
         ),
@@ -55,15 +54,15 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         className={slots.wrapper({
           class: clsx(
             [
-              'w-auto h-auto',
-              'bg-transparent',
-              'rounded-lg',
-              'flex items-center justify-center',
-              'group-data-[selected=true]:bg-transparent',
-              '!text-default-500',
-              'pt-px',
-              'px-0',
-              'mx-0',
+              "w-auto h-auto",
+              "bg-transparent",
+              "rounded-lg",
+              "flex items-center justify-center",
+              "group-data-[selected=true]:bg-transparent",
+              "!text-default-500",
+              "pt-px",
+              "px-0",
+              "mx-0",
             ],
             classNames?.wrapper
           ),
