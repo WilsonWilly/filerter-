@@ -11,8 +11,6 @@ interface MiniatureProps {
 }
 
 function Miniature({ name, description, picture, slug }: MiniatureProps) {
-  console.log(slug);
-
   return (
     <Link href={`/detail/${encodeURIComponent(slug)}`}>
       <Card
@@ -28,6 +26,7 @@ function Miniature({ name, description, picture, slug }: MiniatureProps) {
           src={picture}
         />
         <Tooltip
+          placement="bottom"
           content={
             <div className="px-1 py-2">
               <div className="text-small font-bold">{name}</div>
