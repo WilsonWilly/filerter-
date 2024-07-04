@@ -14,5 +14,7 @@ export const thunkFetchBoardGameDetails = createAsyncThunk<
       `http://virginie-prost.vpnuser.lan:8000/api/games/${slug}`
     );
     return response.data;
-  } catch (error) {}
+  } catch (error) {
+    return "Ce jeu de société n'existe pas";
+  }
 });

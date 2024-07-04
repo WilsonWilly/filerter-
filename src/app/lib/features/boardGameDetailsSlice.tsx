@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IBoardGame } from '@/@types/boardGame';
+import { IBoardGameDetails } from '@/@types/boardGame';
 import { thunkFetchBoardGameDetails } from '../middlewares/thunkFetchBoardGameDetails';
 
 interface BoardGameDetailsState {
-  boardGameDetails: IBoardGame | null;
+  boardGameDetails: IBoardGameDetails | null;
   error: string;
   isLoading: boolean;
 }
 
-// State initial sans jeux
+// State initial vide (pas de détails du jeu à l'initialisation)
 const initialState: BoardGameDetailsState = {
   boardGameDetails: null,
   error: '',
@@ -27,6 +27,7 @@ export const boardGameDetailsSlice = createSlice({
       })
       .addCase(thunkFetchBoardGameDetails.fulfilled, (state, action) => {
         // Action à faire si l'appel API est un succés
+        // On enregistre les données venant de l'API dans le store (ici les détails d'UN jeu, avec ses avis)
         state.boardGameDetails = action.payload;
         state.isLoading = false;
       })

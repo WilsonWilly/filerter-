@@ -21,6 +21,8 @@ export default function BoardGame() {
     dispatch(thunkFetchBoardGameDetails(slug));
   }, []);
 
+  const detailsGame = useAppSelector((state) => state.boardGameDetails);
+
   return (
     <main className="flex text-sm flex-col items-center justify-center p-2 text-black ">
       <section className="w-full flex justify-between mb-1">

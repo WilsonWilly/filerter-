@@ -1,3 +1,4 @@
+// Interface pour la liste des jeux
 export interface IBoardGame {
   id: number;
   name: string;
@@ -8,13 +9,33 @@ export interface IBoardGame {
   picture: string;
   min_players: number;
   max_players: number;
+  min_age: number;
+  max_age: any;
+  time: number;
+  views: any;
+  trend: any;
+  categories: Category[];
+  difficulty: string;
   date_release: string;
   date_create: string;
-  min_age: number;
-  // maxAge: null;
-  time: number;
-  // difficulty: string;
-  // vue: number;
-  // trend: boolean;
-  // userId: number;
+}
+
+// Interfaces pour le détail des jeux
+export interface IBoardGameDetails {
+  game: IBoardGame;
+  opinions: Opinion[];
+}
+
+export interface Category {
+  id: number;
+  name: string;
+  description: string;
+}
+
+export interface Opinion {
+  id: number;
+  comment: string;
+  rating: number;
+  price: number;
+  opinion_date: string;
 }
