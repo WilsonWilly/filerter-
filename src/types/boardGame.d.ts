@@ -1,4 +1,4 @@
-// Interface pour la liste des jeux
+// Interface pour un jeu
 export interface IBoardGame {
   id: number;
   name: string;

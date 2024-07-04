@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IBoardGame } from '@/@types/boardGame';
+import { IBoardGame } from '@/types/boardGame';
 
 import { thunkFetchBoardGamesList } from '../middlewares/thunkFetchBoardGamesList';
 

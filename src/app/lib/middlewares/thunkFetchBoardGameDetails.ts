@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IBoardGame } from '@/@types/boardGame';
+import { IBoardGameDetails } from '../../../types/boardGame';
 
 export const thunkFetchBoardGameDetails = createAsyncThunk<
-  IBoardGame, // Type du retour de la fonction
+  IBoardGameDetails, // Type du retour de la fonction
   string, // Type du paramètrer d'entrée (slug)
   {
     rejectValue: string; // Type de la valeur en cas d'erreur
