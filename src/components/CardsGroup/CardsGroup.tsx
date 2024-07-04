@@ -24,6 +24,7 @@ function CardsGroup() {
           name={boardGame.name}
           description={boardGame.description}
           picture={boardGame.picture}
+          slug={boardGame.slug}
         />
       ))}
     </div>
