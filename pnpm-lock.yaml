@@ -58,10 +58,10 @@ importers:
         version: 3.4.4
     devDependencies:
       '@types/node':
-        specifier: ^20
+        specifier: ^20.14.9
         version: 20.14.9
       '@types/react':
-        specifier: ^18
+        specifier: ^18.3.3
         version: 18.3.3
       '@types/react-dom':
         specifier: ^18
@@ -109,7 +109,7 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
       typescript:
-        specifier: ^5
+        specifier: ^5.5.2
         version: 5.5.2
 
 packages:
