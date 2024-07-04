@@ -46,7 +46,7 @@ jobs:
         run: npx next --version
 
       - name: Verify TailwindCSS installation
-        run: npx tailwindcss --version
+        run: pnpm tailwindcss --version
 
       - name: Build the project
         run: npx next build
