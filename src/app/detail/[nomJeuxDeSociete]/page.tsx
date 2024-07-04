@@ -1,6 +1,6 @@
 import { Image } from '@nextui-org/react';
 
-import { detailsGame } from '../../assets/detailsGame';
+import { detailsGame } from '../../../assets/detailsGame';
 import { Button } from '@nextui-org/react';
 import { Heart, PlusSquare } from 'react-feather';
 import ModalOpinion from '@/components/Modal/ModalOpinion';
