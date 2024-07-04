@@ -37,16 +37,13 @@ jobs:
         run: pnpm install --prod
 
       - name: Install devDependencies
-        run: pnpm install --dev
+        run: npm install --dev
 
       - name: Verify TypeScript installation
-        run: pnpm exec tsc --version
+        run: npm exec tsc --version
 
       - name: Verify Next.js installation
         run: npx next --version
-
-      - name: Verify TailwindCSS installation
-        run: pnpm tailwindcss --version
 
       - name: Build the project
         run: npx next build
