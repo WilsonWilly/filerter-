@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { boardGamesSlice } from './features/boardGamesListSlice';
+import boardGamesSlice from './features/boardGamesListSlice';
+import boardGameDetailsSlice from './features/boardGameDetailsSlice';
 
 // Création du store Redux
 const store = configureStore({
   reducer: {
-    boardGames: boardGamesSlice.reducer,
+    boardGames: boardGamesSlice,
+    boardGameDetails: boardGameDetailsSlice,
   },
 });
 

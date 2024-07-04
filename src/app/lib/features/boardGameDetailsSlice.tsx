@@ -1,37 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { IBoardGame } from '@/@types/boardGame';
+import { thunkFetchBoardGameDetails } from '../middlewares/thunkFetchBoardGameDetails';
 
-import { thunkFetchBoardGamesList } from '../middlewares/thunkFetchBoardGamesList';
-
-interface BoardGamesState {
-  boardGamesList: IBoardGame[];
+interface BoardGameDetailsState {
+  boardGameDetails: IBoardGame | null;
   error: string;
   isLoading: boolean;
 }
 
 // State initial sans jeux
-const initialState: BoardGamesState = {
-  boardGamesList: [],
+const initialState: BoardGameDetailsState = {
+  boardGameDetails: null,
   error: '',
   isLoading: true,
 };
 
-export const boardGamesSlice = createSlice({
-  name: 'boardgames list',
+export const boardGameDetailsSlice = createSlice({
+  name: 'boardgames list and details',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(thunkFetchBoardGamesList.pending, (state) => {
+      .addCase(thunkFetchBoardGameDetails.pending, (state) => {
         // Action à faire pendant le chargement de la requête API
         state.isLoading = true;
       })
-      .addCase(thunkFetchBoardGamesList.fulfilled, (state, action) => {
+      .addCase(thunkFetchBoardGameDetails.fulfilled, (state, action) => {
         // Action à faire si l'appel API est un succés
-        state.boardGamesList = action.payload;
+        state.boardGameDetails = action.payload;
         state.isLoading = false;
       })
-      .addCase(thunkFetchBoardGamesList.rejected, (state, action) => {
+      .addCase(thunkFetchBoardGameDetails.rejected, (state, action) => {
         // Action à faire si l'appel API est un échec
         console.log('erreur appel API : ', action);
         state.isLoading = false;
@@ -39,4 +38,4 @@ export const boardGamesSlice = createSlice({
   },
 });
 
-export default boardGamesSlice.reducer;
+export default boardGameDetailsSlice.reducer;

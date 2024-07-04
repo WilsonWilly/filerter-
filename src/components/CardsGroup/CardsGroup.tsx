@@ -3,7 +3,6 @@
 
 import { useAppDispatch, useAppSelector } from '@/app/lib/hooks';
 import Miniature from './Miniature';
-import { RootState } from '@reduxjs/toolkit/query';
 import { useEffect } from 'react';
 import { thunkFetchBoardGamesList } from '@/app/lib/middlewares/thunkFetchBoardGamesList';
 import { Card, Spinner } from '@nextui-org/react';

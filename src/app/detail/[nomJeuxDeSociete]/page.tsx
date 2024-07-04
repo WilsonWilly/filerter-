@@ -1,15 +1,25 @@
-import { Image } from '@nextui-org/react';
+'use client';
 
+import { Image } from '@nextui-org/react';
 import { detailsGame } from '../../../assets/detailsGame';
 import { Button } from '@nextui-org/react';
 import { Heart, PlusSquare } from 'react-feather';
 import ModalOpinion from '@/components/Modal/ModalOpinion';
 import Rating from '@/components/Rating/Rating';
-import { useAppSelector } from '@/app/lib/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/lib/hooks';
+import { useParams } from 'next/navigation';
+import { useEffect } from 'react';
+import { thunkFetchBoardGameDetails } from '@/app/lib/middlewares/thunkFetchBoardGameDetails';
 
 export default function BoardGame() {
-  const boardGames = useAppSelector((state) => state.boardGames);
-  console.log(boardGames);
+  const dispatch = useAppDispatch();
+
+  // On récupère le slug depuis l'url
+  const { slug } = useParams<{ slug: string }>();
+
+  useEffect(() => {
+    dispatch(thunkFetchBoardGameDetails(slug));
+  }, []);
 
   return (
     <main className="flex text-sm flex-col items-center justify-center p-2 text-black ">
