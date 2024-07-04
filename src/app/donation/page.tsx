@@ -11,7 +11,7 @@ export default function DonationPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Fonction de gestion de la soumission du formulaire
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Empêche le comportement par défaut du formulaire (rechargement de la page)
     // Ici, vous implémenterez la logique pour traiter le don (par exemple, envoyer les données à un serveur)
     console.log('Don soumis:', { amount, message });
