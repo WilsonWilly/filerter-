@@ -24,7 +24,7 @@ import {
   HeartFilledIcon,
   SearchIcon,
   Logo,
-} from '@/components/icons';
+} from '../../components/icons';
 
 export const Navbar = () => {
   const searchInput = (
