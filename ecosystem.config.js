@@ -2,11 +2,11 @@
 module.exports = {
   apps: [
     {
-      name: 'O-jeux-de-societe', // Nom de votre application
-      script: 'npm',
-      args: 'start',
+      name: "O-jeux-de-societe", // Nom de votre application
+      script: "npm",
+      args: "start",
       env: {
-        NODE_ENV: 'production',
+        NODE_ENV: "production",
       },
     },
   ],

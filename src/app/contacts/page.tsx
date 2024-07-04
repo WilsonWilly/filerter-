@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState, ChangeEvent, FormEvent } from 'react';
-import { Input, Textarea, Button } from '@nextui-org/react';
+import React, { useState, ChangeEvent, FormEvent } from "react";
+import { Input, Textarea, Button } from "@nextui-org/react";
 
 type FormData = {
   name: string;
@@ -11,9 +11,9 @@ type FormData = {
 
 export default function ContactUs() {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleChange = (
@@ -29,9 +29,9 @@ export default function ContactUs() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Ici, vous pouvez ajouter la logique pour envoyer les données du formulaire
-    console.log('Formulaire soumis:', formData);
+    console.log("Formulaire soumis:", formData);
     // Réinitialiser le formulaire après soumission
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
     // TODO: Ajouter ici une notification de succès pour l'utilisateur
   };
 

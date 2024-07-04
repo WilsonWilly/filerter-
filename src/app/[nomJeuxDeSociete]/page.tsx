@@ -1,10 +1,9 @@
-import { Image } from '@nextui-org/react';
+import { Image, Button } from "@nextui-org/react";
 
-import { detailsGame } from '../../assets/detailsGame';
-import { Button } from '@nextui-org/react';
-import { Heart, PlusSquare } from 'react-feather';
-import ModalOpinion from '../../components/Modal/ModalOpinion';
-import Rating from '../../components/Rating/Rating';
+import { Heart, PlusSquare } from "react-feather";
+import { detailsGame } from "../../assets/detailsGame";
+import ModalOpinion from "../../components/Modal/ModalOpinion";
+import Rating from "../../components/Rating/Rating";
 
 export default function BoardGame() {
   return (
