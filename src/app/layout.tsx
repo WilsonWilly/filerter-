@@ -2,13 +2,13 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-import { siteConfig } from '@/config/site';
+import { siteConfig } from '../config/site';
 
-import Header from '@/components/Header/Header';
+import Header from '../components/Header/Header';
 
-import Footer from '@/components/Footer/Footer';
+import Footer from '../components/Footer/Footer';
 
-import { Navbar } from '@/components/Navbar/Navbar';
+import { Navbar } from '../components/Navbar/Navbar';
 
 import { Providers } from './providers';
 
