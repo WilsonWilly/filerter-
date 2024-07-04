@@ -18,3 +18,9 @@ export interface IBoardGame {
   // trend: boolean;
   // userId: number;
 }
+
+export interface IconSvgProps {
+  size: number;
+  width: string | number | undefined;
+  height: string | number | undefined;
+}
