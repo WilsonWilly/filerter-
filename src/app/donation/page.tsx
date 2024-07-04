@@ -1,74 +1,84 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Input, Button, Textarea, Card, Text } from '@nextui-org/react';
+import { Input, Textarea, Card } from '@nextui-org/react';
 
-// Définition du composant fonctionnel DonationPage
-export default function DonationPage() {
-  // Déclaration des états locaux pour gérer le montant du don, le message, et l'état de soumission
-  const [amount, setAmount] = useState('');
-  const [message, setMessage] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
+const DonationPage: React.FC = () => {
+  const [amount, setAmount] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
 
-  // Fonction de gestion de la soumission du formulaire
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Empêche le comportement par défaut du formulaire (rechargement de la page)
-    // Ici, vous implémenterez la logique pour traiter le don (par exemple, envoyer les données à un serveur)
-    console.log('Don soumis:', { amount, message });
-    setIsSubmitted(true); // Met à jour l'état pour indiquer que le formulaire a été soumis
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAmount(e.target.value);
+    setError('');
+  };
+
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!amount || parseFloat(amount) <= 0) {
+      setError('Veuillez entrer un montant valide.');
+    } else {
+      setIsSubmitted(true);
+      setError('');
+    }
   };
 
   return (
-    // Conteneur principal avec styles pour centrer le contenu et ajouter un fond dégradé
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
       <Card className="p-8 max-w-md w-full">
-        <Text h2 className="text-center mb-6">
-          Faites un don pour soutenir O &aposjeuxDeSociété
-        </Text>
+        <h2 className="text-center mb-6 text-2xl font-bold">
+          Faites un don pour soutenir O&apos;jeuxDeSociété
+        </h2>
 
         {!isSubmitted ? (
-          // Formulaire de don qui s'affiche si le formulaire n'a pas encore été soumis
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <Input
               label="Montant du don (€)"
               type="number"
               placeholder="Entrez le montant"
               value={amount}
-              onChange={(e) => setAmount(e.target.value)} // Met à jour l'état 'amount' à chaque changement de valeur
-              required // Champ obligatoire
+              onChange={handleAmountChange}
+              required
             />
             <Textarea
               label="Votre message (optionnel)"
               placeholder="Laissez un message d'encouragement"
               value={message}
-              onChange={(e) => setMessage(e.target.value)} // Met à jour l'état 'message' à chaque changement de valeur
+              onChange={handleMessageChange}
             />
-            <Button type="submit" color="primary" className="w-full">
-              Faire un don
-            </Button>
+            {error && <p className="text-red-500">{error}</p>}
+            <button
+              type="submit"
+              className="w-full py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+            >
+              Envoyer le don
+            </button>
           </form>
         ) : (
-          // Message de remerciement qui s'affiche après la soumission du formulaire
           <div className="text-center">
-            <Text h3 className="mb-4">
+            <h3 className="mb-4 text-xl font-semibold">
               Merci pour votre générosité !
-            </Text>
-            <Text>
+            </h3>
+            <p>
               Votre don de {amount}€ nous aide à continuer notre passion pour
               les jeux de société.
-            </Text>
-            {message && (
-              // Affiche le message de l'utilisateur s'il a été renseigné
-              <Text className="mt-4 italic">{message}</Text>
-            )}
+            </p>
+            {message && <p className="mt-4 italic">{message}</p>}
           </div>
         )}
 
-        <Text className="text-center mt-6 text-sm text-gray-600">
+        <p className="text-center mt-6 text-sm text-gray-600">
           Votre soutien nous permet de continuer à créer et partager des
           expériences de jeu inoubliables.
-        </Text>
+        </p>
       </Card>
     </div>
   );
-}
+};
+
+export default DonationPage;

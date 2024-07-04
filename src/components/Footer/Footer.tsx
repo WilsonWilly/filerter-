@@ -32,7 +32,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-gray-300" href="/contact">
+                <Link className="hover:text-gray-300" href="/contacts">
                   Contact Us
                 </Link>
               </li>
@@ -51,7 +51,6 @@ const Footer = () => {
                   >
                     {key === 'Instagram' && '👨‍💻 '}
                     {key === 'twitter' && '🐦 '}
-                    {key === 'docs' && '📚 '}
                     {key === 'Facebook' && '💬 '}
                     {key === 'sponsor' && '❤️ '}
                     {key.charAt(0).toUpperCase() + key.slice(1)}
