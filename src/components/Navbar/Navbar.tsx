@@ -23,7 +23,6 @@ import {
   DiscordIcon,
   HeartFilledIcon,
   SearchIcon,
-  Logo,
 } from '@/components/icons';
 
 export const Navbar = () => {
@@ -76,6 +75,13 @@ export const Navbar = () => {
 
       <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
+        justify="center"
+      >
+        <NavbarItem className="flex w-full max-w-lg">{searchInput}</NavbarItem>
+      </NavbarContent>
+
+      <NavbarContent
+        className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
@@ -87,7 +93,6 @@ export const Navbar = () => {
           </Link>
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden md:flex">
           <Button
             isExternal
