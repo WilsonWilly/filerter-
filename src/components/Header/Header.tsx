@@ -13,7 +13,7 @@ import {
   DropdownMenu,
   Avatar,
 } from '@nextui-org/react';
-import SearchIcon from '@/components/SearchIcon';
+import SearchIcon from '../../components/SearchIcon';
 
 const Header = () => {
   return (
