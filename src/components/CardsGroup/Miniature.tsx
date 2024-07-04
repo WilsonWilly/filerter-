@@ -1,7 +1,6 @@
 'use client';
 
-import { Card, Image, CardFooter } from '@nextui-org/react';
-import { Suspense } from 'react';
+import { Card, Image, CardFooter, Tooltip } from '@nextui-org/react';
 
 interface MiniatureProps {
   name: string;
@@ -23,14 +22,23 @@ function Miniature({ name, description, picture }: MiniatureProps) {
         className="z-0 w-full h-full object-cover sm:object-top"
         src={picture}
       />
-      <CardFooter className="absolute z-10 bottom-0 flex-col !items-start bg-white/35 rounded-lg h-2/5 ">
-        <h3 className="text-black text-sm uppercase font-bold truncate ... w-full">
-          {name}
-        </h3>
-        <h4 className="text-blueNight font-extralight text-xs truncate overflow-hidden ... w-full">
-          {description}
-        </h4>
-      </CardFooter>
+      <Tooltip
+        content={
+          <div className="px-1 py-2">
+            <div className="text-small font-bold">{name}</div>
+            <div className="text-tiny">{description}</div>
+          </div>
+        }
+      >
+        <CardFooter className="absolute z-10 bottom-0 flex-col !items-start bg-white/35 rounded-lg h-2/5 ">
+          <h3 className="text-black text-sm uppercase font-bold truncate ... w-full">
+            {name}
+          </h3>
+          <h4 className="text-blueNight font-extralight text-xs truncate overflow-hidden ... w-full">
+            {description}
+          </h4>
+        </CardFooter>
+      </Tooltip>
     </Card>
   );
 }
