@@ -1,23 +1,23 @@
-import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
-import localFont from 'next/font/local';
-import './globals.css';
-import { siteConfig } from '../config/site';
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+import "./globals.css";
+import { siteConfig } from "../config/site";
 
-import Header from '../components/Header/Header';
+import Header from "../components/Header/Header";
 
-import Footer from '../components/Footer/Footer';
+import Footer from "../components/Footer/Footer";
 
-import { Navbar } from '../components/Navbar/Navbar';
+import { Navbar } from "../components/Navbar/Navbar";
 
-import { Providers } from './providers';
+import { Providers } from "./providers";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 const adventureFont = localFont({
-  src: '../assets/fonts/adventure/Adventure.otf',
+  src: "../assets/fonts/adventure/Adventure.otf",
 });
 const adventureFontHollow = localFont({
-  src: '../assets/fonts/adventure/Adventure-Hollow.otf',
+  src: "../assets/fonts/adventure/Adventure-Hollow.otf",
 });
 
 export const metadata: Metadata = {
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon.ico",
   },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
 };
 

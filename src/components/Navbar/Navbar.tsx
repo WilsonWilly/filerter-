@@ -6,17 +6,17 @@ import {
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
-} from '@nextui-org/react';
-import { Button } from '@nextui-org/react';
-import { Kbd } from '@nextui-org/react';
-import { Link } from '@nextui-org/react';
-import { Input } from '@nextui-org/react';
-import { link as linkStyles } from '@nextui-org/theme';
-import NextLink from 'next/link';
-import clsx from 'clsx';
+  Button,
+  Kbd,
+  Link,
+  Input,
+} from "@nextui-org/react";
+import { link as linkStyles } from "@nextui-org/theme";
+import NextLink from "next/link";
+import clsx from "clsx";
 
-import { siteConfig } from '../../config/site';
-import { ThemeSwitch } from '../../components/theme-switch';
+import { siteConfig } from "../../config/site";
+import { ThemeSwitch } from "../theme-switch";
 import {
   TwitterIcon,
   GithubIcon,
@@ -24,18 +24,18 @@ import {
   HeartFilledIcon,
   SearchIcon,
   Logo,
-} from '../../components/icons';
+} from "../icons";
 
 export const Navbar = () => {
   const searchInput = (
     <Input
       aria-label="Search"
       classNames={{
-        inputWrapper: 'bg-default-100',
-        input: 'text-sm',
+        inputWrapper: "bg-default-100",
+        input: "text-sm",
       }}
       endContent={
-        <Kbd className="hidden lg:inline-block" keys={['command']}>
+        <Kbd className="hidden lg:inline-block" keys={["command"]}>
           K
         </Kbd>
       }
@@ -63,8 +63,8 @@ export const Navbar = () => {
             <NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
-                  linkStyles({ color: 'foreground' }),
-                  'data-[active=true]:text-primary data-[active=true]:font-medium'
+                  linkStyles({ color: "foreground" }),
+                  "data-[active=true]:text-primary data-[active=true]:font-medium"
                 )}
                 color="foreground"
                 href={item.href}
@@ -120,8 +120,8 @@ export const Navbar = () => {
               <Link
                 color={
                   index === siteConfig.navMenuItems.length - 1
-                    ? 'danger'
-                    : 'foreground'
+                    ? "danger"
+                    : "foreground"
                 }
                 href={item.href}
                 size="lg"

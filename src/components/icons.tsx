@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { IconSvgProps } from '../types/boardGame';
+import { IconSvgProps } from "../types/boardGame";
 
 export const Logo: React.FC<IconSvgProps> = ({
   size = 36,
@@ -158,7 +158,12 @@ export const HeartFilledIcon = ({
   </svg>
 );
 
-export const SearchIcon = ({ size = 24, width, height, ...props }: IconSvgProps) => (
+export const SearchIcon = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
   <svg
     aria-hidden="true"
     focusable="false"
