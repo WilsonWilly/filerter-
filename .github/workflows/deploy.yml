@@ -51,6 +51,9 @@ jobs:
       - name: Build the project
         run: npm run build:no-type-check
 
+      - name: Test SSH connection
+        run: ssh -o StrictHostKeyChecking=no $USERNAME@$SERVER 'echo "SSH connection successful"'
+
       - name: Deploy to server
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
