@@ -42,11 +42,28 @@ jobs:
       - name: Verify TypeScript installation
         run: npm exec tsc --version
 
+      - name: Compile TypeScript
+        run: tsc
+
       - name: Verify Next.js installation
         run: npx next --version
 
       - name: Build the project
-        run: npx next build --no-check
+        run: npm run build:no-type-check
+
+      - name: Check environment variables
+        run: |
+          echo "Username: ${{ secrets.USERNAME }}"
+          echo "Server: ${{ secrets.SERVER }}"
+
+      - name: Display public key
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keygen -y -f ~/.ssh/id_rsa
+
+      - name: Test SSH connection
+        run: ssh -o StrictHostKeyChecking=no $USERNAME@$SERVER 'echo "SSH connection successful"'
 
       - name: Deploy to server
         env:

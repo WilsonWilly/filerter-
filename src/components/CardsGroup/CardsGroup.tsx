@@ -11,6 +11,9 @@ import { thunkFetchBoardGamesList } from '../../app/lib/middlewares/thunkFetchBo
 // import { boardGames } from '../../assets/data';
 
 function CardsGroup() {
+  // const dispatch = useAppDispatch();
+  // const boardGames = useAppSelector((state) => state.boardGames.boardGamesList);
+  // console.log(boardGames);
   const dispatch = useAppDispatch();
 
   // On récupère la liste des jeux depuis le store Redux
@@ -19,6 +22,9 @@ function CardsGroup() {
   // On récupère l'état de chargement depuis le store Redux
   const isLoading = useAppSelector((state) => state.boardGames.isLoading);
 
+  // useEffect(() => {
+  //  dispatch(thunkFetchBoardGamesList());
+  // }, []);
   // On lance l'appel API au 1er chargement de la page
   useEffect(() => {
     dispatch(thunkFetchBoardGamesList());
