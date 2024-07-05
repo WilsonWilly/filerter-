@@ -2,9 +2,9 @@
 
 "use client";
 
-import { RootState } from "@reduxjs/toolkit/query";
+
 import { useEffect } from "react";
-import { Card, Spinner } from "@nextui-org/react";
+import { Spinner } from "@nextui-org/react";
 import { useAppDispatch, useAppSelector } from "../../app/lib/hooks";
 import Miniature from "./Miniature";
 import { thunkFetchBoardGamesList } from "../../app/lib/middlewares/thunkFetchBoardGamesList";
