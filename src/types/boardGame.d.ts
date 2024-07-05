@@ -1,4 +1,4 @@
-import { ExecFileOptionsWithStringEncoding } from "child_process";
+import { ExecFileOptionsWithStringEncoding } from 'child_process';
 
 export interface IBoardGame {
   id: number;
@@ -10,21 +10,26 @@ export interface IBoardGame {
   picture: string;
   min_players: number;
   max_players: number;
+  min_age: number;
+  max_age: any;
+  time: number;
+  views: any;
+  trend: any;
+  categories: Category[];
+  difficulty: string;
   date_release: string;
   date_create: string;
-  min_age: number;
-  // maxAge: null;
-  time: number;
-  // difficulty: string;
-  // vue: number;
-  // trend: boolean;
-  // userId: number;
 }
 
-export interface IconSvgProps {
-  size: number;
-  width: string | number | undefined;
-  height: string | number | undefined;
+export interface IBoardGameDetails {
+  game: Game;
+  opinions: Opinion[];
+}
+
+export interface Category {
+  id: number;
+  name: string;
+  description: string;
 }
 
 export interface Opinions {
@@ -34,4 +39,10 @@ export interface Opinions {
   seen_price: number;
   created_at: string;
   pseudo: string;
+}
+
+export interface IconSvgProps {
+  size: number;
+  width: string | number | undefined;
+  height: string | number | undefined;
 }

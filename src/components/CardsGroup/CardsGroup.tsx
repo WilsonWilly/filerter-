@@ -1,10 +1,12 @@
-"use client";
-import { useAppDispatch, useAppSelector } from "@/app/lib/hooks";
-import Miniature from "./Miniature";
-import { RootState } from "@reduxjs/toolkit/query";
-import { useEffect } from "react";
-import { thunkFetchBoardGamesList } from "@/app/lib/middlewares/thunkFetchBoardGamesList";
-import { Spinner } from "@nextui-org/react";
+// Composant qui fait son rendu côté client
+
+'use client';
+
+import { useEffect } from 'react';
+import { Spinner } from '@nextui-org/react';
+import { useAppDispatch, useAppSelector } from '../../app/lib/hooks';
+import Miniature from './Miniature';
+import { thunkFetchBoardGamesList } from '../../app/lib/middlewares/thunkFetchBoardGamesList';
 
 // import { boardGames } from '../../assets/data';
 
@@ -38,6 +40,7 @@ function CardsGroup() {
           name={boardGame.name}
           description={boardGame.description}
           picture={boardGame.picture}
+          slug={boardGame.slug}
         />
       ))}
     </div>
