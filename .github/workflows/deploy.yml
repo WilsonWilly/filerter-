@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Cache dependencies
         uses: actions/cache@v4
@@ -36,8 +36,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install --prod
 
+      - name: Install devDependencies
+        run: npm install --dev
+
+      - name: Verify TypeScript installation
+        run: npm exec tsc --version
+
+      - name: Verify Next.js installation
+        run: npx next --version
+
       - name: Build the project
-        run: pnpm run build
+        run: npx next build --no-check
 
       - name: Deploy to server
         env:

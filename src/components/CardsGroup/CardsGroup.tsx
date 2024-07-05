@@ -1,11 +1,12 @@
 // Composant qui fait son rendu côté client
+
 'use client';
 
-import { useAppDispatch, useAppSelector } from '@/app/lib/hooks';
-import Miniature from './Miniature';
 import { useEffect } from 'react';
-import { thunkFetchBoardGamesList } from '@/app/lib/middlewares/thunkFetchBoardGamesList';
-import { Card, Spinner } from '@nextui-org/react';
+import { Spinner } from '@nextui-org/react';
+import { useAppDispatch, useAppSelector } from '../../app/lib/hooks';
+import Miniature from './Miniature';
+import { thunkFetchBoardGamesList } from '../../app/lib/middlewares/thunkFetchBoardGamesList';
 
 // import { boardGames } from '../../assets/data';
 

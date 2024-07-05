@@ -4,11 +4,11 @@ import axios from 'axios';
 import './App.scss';
 
 function App() {
-  const [game, setGame] = useState([]);
-  const [compteur, setCompteur] = useState(1);
+const [game, setGame] = useState([]);
+const [compteur, setCompteur] = useState(1);
 
-  const runScript = async () => {
-    console.log('clic run du script');
+const runScript = async () => {
+console.log('clic run du script');
 
     console.log('va faire un appel api');
     try {
@@ -21,20 +21,22 @@ function App() {
     } catch (error) {
       console.error("Erreur lors de l'appel API", error);
     }
-  };
-  console.log(game);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>YOO !! on va voler le bdd de https://boardgamegeek.com/xmlapi </p>
+};
+console.log(game);
+
+return (
+<div className="App">
+<header className="App-header">
+<p>YOO !! on va voler le bdd de https://boardgamegeek.com/xmlapi </p>
 
         <button type="button" className="button" onClick={runScript}>
           clic ici pour lancer le script !
         </button>
       </header>
     </div>
-  );
+
+);
 }
 
 export default App;

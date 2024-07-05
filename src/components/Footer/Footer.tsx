@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import { siteConfig } from '@/config/site';
+import Link from "next/link";
+import { siteConfig } from "../../config/site";
 
 const Footer = () => {
   return (
@@ -49,11 +49,11 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {key === 'Instagram' && '👨‍💻 '}
-                    {key === 'twitter' && '🐦 '}
-                    {key === 'docs' && '📚 '}
-                    {key === 'Facebook' && '💬 '}
-                    {key === 'sponsor' && '❤️ '}
+                    {key === "Instagram" && "👨‍💻 "}
+                    {key === "twitter" && "🐦 "}
+                    {key === "docs" && "📚 "}
+                    {key === "Facebook" && "💬 "}
+                    {key === "sponsor" && "❤️ "}
                     {key.charAt(0).toUpperCase() + key.slice(1)}
                   </a>
                 </li>

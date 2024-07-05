@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Input, Button, Textarea, Card, Text } from '@nextui-org/react';
+import React, { useState } from "react";
+import { Input, Button, Textarea, Card } from "@nextui-org/react";
 
 // Définition du composant fonctionnel DonationPage
 export default function DonationPage() {
   // Déclaration des états locaux pour gérer le montant du don, le message, et l'état de soumission
-  const [amount, setAmount] = useState('');
-  const [message, setMessage] = useState('');
+  const [amount, setAmount] = useState("");
+  const [message, setMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Fonction de gestion de la soumission du formulaire
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Empêche le comportement par défaut du formulaire (rechargement de la page)
     // Ici, vous implémenterez la logique pour traiter le don (par exemple, envoyer les données à un serveur)
-    console.log('Don soumis:', { amount, message });
+    console.log("Don soumis:", { amount, message });
     setIsSubmitted(true); // Met à jour l'état pour indiquer que le formulaire a été soumis
   };
 
@@ -22,9 +22,9 @@ export default function DonationPage() {
     // Conteneur principal avec styles pour centrer le contenu et ajouter un fond dégradé
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
       <Card className="p-8 max-w-md w-full">
-        <Text h2 className="text-center mb-6">
+        <Textarea className="text-center mb-6">
           Faites un don pour soutenir O &aposjeuxDeSociété
-        </Text>
+        </Textarea>
 
         {!isSubmitted ? (
           // Formulaire de don qui s'affiche si le formulaire n'a pas encore été soumis
@@ -50,24 +50,22 @@ export default function DonationPage() {
         ) : (
           // Message de remerciement qui s'affiche après la soumission du formulaire
           <div className="text-center">
-            <Text h3 className="mb-4">
-              Merci pour votre générosité !
-            </Text>
-            <Text>
+            <Textarea className="mb-4">Merci pour votre générosité !</Textarea>
+            <Textarea>
               Votre don de {amount}€ nous aide à continuer notre passion pour
               les jeux de société.
-            </Text>
+            </Textarea>
             {message && (
               // Affiche le message de l'utilisateur s'il a été renseigné
-              <Text className="mt-4 italic">{message}</Text>
+              <Textarea className="mt-4 italic">{message}</Textarea>
             )}
           </div>
         )}
 
-        <Text className="text-center mt-6 text-sm text-gray-600">
+        <Textarea className="text-center mt-6 text-sm text-gray-600">
           Votre soutien nous permet de continuer à créer et partager des
           expériences de jeu inoubliables.
-        </Text>
+        </Textarea>
       </Card>
     </div>
   );

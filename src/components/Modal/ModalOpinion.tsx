@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Modal,
   ModalContent,
@@ -12,9 +12,9 @@ import {
   Textarea,
   Select,
   SelectItem,
-} from '@nextui-org/react';
-import { detailsGame } from '@/assets/detailsGame';
-import Rating from '@/components/Rating/Rating';
+} from "@nextui-org/react";
+import { detailsGame } from "../../assets/detailsGame";
+import Rating from "../Rating/Rating";
 
 export default function ModalOpinion() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,23 +44,23 @@ export default function ModalOpinion() {
                     <Rating goldRating={0} />
                   </SelectItem>
                   <SelectItem key={1}>
-                    {' '}
+                    {" "}
                     <Rating goldRating={1} />
                   </SelectItem>
                   <SelectItem key={2}>
-                    {' '}
+                    {" "}
                     <Rating goldRating={2} />
                   </SelectItem>
                   <SelectItem key={3}>
-                    {' '}
+                    {" "}
                     <Rating goldRating={3} />
                   </SelectItem>
                   <SelectItem key={4}>
-                    {' '}
+                    {" "}
                     <Rating goldRating={4} />
                   </SelectItem>
                   <SelectItem key={5}>
-                    {' '}
+                    {" "}
                     <Rating goldRating={5} />
                   </SelectItem>
                 </Select>

@@ -1,9 +1,7 @@
-import { title } from "@/components/primitives";
-
-export default function BlogPage() {
+export default function blog() {
   return (
-    <div>
-      <h1 className={title()}>Blog</h1>
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <p>HELLO WORLD LegalNotices</p>
+    </main>
   );
 }

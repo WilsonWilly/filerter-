@@ -1,4 +1,5 @@
-// Interface pour un jeu
+import { ExecFileOptionsWithStringEncoding } from 'child_process';
+
 export interface IBoardGame {
   id: number;
   name: string;
@@ -9,33 +10,28 @@ export interface IBoardGame {
   picture: string;
   min_players: number;
   max_players: number;
-  min_age: number;
-  max_age: any;
-  time: number;
-  views: any;
-  trend: any;
-  categories: Category[];
-  difficulty: string;
   date_release: string;
   date_create: string;
+  min_age: number;
+  // maxAge: null;
+  time: number;
+  // difficulty: string;
+  // vue: number;
+  // trend: boolean;
+  // userId: number;
 }
 
-// Interfaces pour le détail des jeux
-export interface IBoardGameDetails {
-  game: IBoardGame;
-  opinions: Opinion[];
+export interface IconSvgProps {
+  size: number;
+  width: string | number | undefined;
+  height: string | number | undefined;
 }
 
-export interface Category {
+export interface Opinions {
   id: number;
-  name: string;
-  description: string;
-}
-
-export interface Opinion {
-  id: number;
-  comment: string;
   rating: number;
-  price: number;
-  opinion_date: string;
+  comment: ExecFileOptionsWithStringEncoding;
+  seen_price: number;
+  created_at: string;
+  pseudo: string;
 }
