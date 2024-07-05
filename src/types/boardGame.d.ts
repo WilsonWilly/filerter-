@@ -21,7 +21,7 @@ export interface IBoardGame {
   date_create: string;
 }
 
-export interface Root {
+export interface IBoardGameDetails {
   game: Game;
   opinions: Opinion[];
 }

@@ -16,12 +16,16 @@ export default function BoardGame() {
 
   // On récupère le slug depuis l'url
   const { slug } = useParams<{ slug: string }>();
+  console.log(slug);
 
   useEffect(() => {
     dispatch(thunkFetchBoardGameDetails(slug));
   }, []);
 
-  const detailsGame = useAppSelector((state) => state.boardGameDetails);
+  const detailsGame = useAppSelector(
+    (state) => state.boardGameDetails.boardGameDetails
+  );
+  console.log(detailsGame);
 
   return (
     <main className="flex text-sm flex-col items-center justify-center p-2 text-black ">
