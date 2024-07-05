@@ -47,7 +47,6 @@ export default function RootLayout({
     <html lang="fr">
       <body className={adventureFont.className}>
         <div className="md:container md:mx-auto md:w-[85%] containerMain">
-          <Header />
           <Navbar />
           <Providers>{children}</Providers>
           <Footer />
