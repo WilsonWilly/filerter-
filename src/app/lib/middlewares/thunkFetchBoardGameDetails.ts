@@ -13,9 +13,10 @@ export const thunkFetchBoardGameDetails = createAsyncThunk<
     const response = await axios.get(
       `http://virginie-prost.vpnuser.lan:8000/api/games/${slug}`
     );
-    return response.data;
     console.log(response);
+    return response.data;
   } catch (error) {
+    console.log(error);
     return "Ce jeu de société n'existe pas";
   }
 });
