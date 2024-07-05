@@ -1,7 +1,7 @@
-export default function Account() {
+export default function blog() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <p>HELLO WORLD Account</p>
+      <p>HELLO WORLD LegalNotices</p>
     </main>
   );
 }

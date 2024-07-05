@@ -1,6 +1,6 @@
-import React from 'react';
+import Image from "next/image";
 
-export default function MentionsLegales() {
+export default function LegalNotices() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-6">Mentions Légales</h1>

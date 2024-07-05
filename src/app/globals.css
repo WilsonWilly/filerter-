@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --foreground: theme('colors.blueNight');
-  --background-start: theme('colors.orange');
-  --background-end: theme('colors.orangePastel');
+  --foreground: theme("colors.blueNight");
+  --background-start: theme("colors.orange");
+  --background-end: theme("colors.orangePastel");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,19 +19,19 @@
 /* TODO Mettre les variables a la place des couleurs en fixe */
 
 body {
-  background-color: #15485C;
+  background-color: #15485c;
   width: 100%;
 }
 
 .containerMain {
   /* From https://css.glass */
-background:linear-gradient(#F36337, #FBC998);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.2px);
--webkit-backdrop-filter: blur(4.2px);
-border: 1px solid rgba(255, 255, 255, 0.27);
-  }
+  background: linear-gradient(#f36337, #fbc998);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+}
 
 @layer utilities {
   .text-balance {

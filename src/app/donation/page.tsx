@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Input, Textarea, Card } from '@nextui-org/react';
+import React, { useState } from "react";
+import { Input, Button, Textarea, Card, Text } from "@nextui-org/react";
 
 const DonationPage: React.FC = () => {
-  const [amount, setAmount] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
+  const [amount, setAmount] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
-  const [error, setError] = useState<string>('');
+  const [error, setError] = useState<string>("");
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(e.target.value);
-    setError('');
+    setError("");
   };
 
   const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -21,10 +21,10 @@ const DonationPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!amount || parseFloat(amount) <= 0) {
-      setError('Veuillez entrer un montant valide.');
+      setError("Veuillez entrer un montant valide.");
     } else {
       setIsSubmitted(true);
-      setError('');
+      setError("");
     }
   };
 

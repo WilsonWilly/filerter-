@@ -1,0 +1,62 @@
+# fichier qui va permettre de mettre a jour le site de facon automatique quand une modification sera push sur la branche main.
+name: Deploy Next.js App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install --prod
+
+      - name: Install devDependencies
+        run: npm install --dev
+
+      - name: Verify TypeScript installation
+        run: npm exec tsc --version
+
+      - name: Verify Next.js installation
+        run: npx next --version
+
+      - name: Build the project
+        run: npx next build --no-check
+
+      - name: Deploy to server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER: ${{ secrets.SERVER }}
+          USERNAME: ${{ secrets.USERNAME }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh -o StrictHostKeyChecking=no $USERNAME@$SERVER "rm -rf /var/www/front_o_jeux_de_societe && mkdir -p /var/www/front_o_jeux_de_societe"
+          scp -r ./* $USERNAME@$SERVER:/var/www/front_o_jeux_de_societe
+          ssh $USERNAME@$SERVER "cd /var/www/front_o_jeux_de_societe && pnpm install && pnpm run build && pm2 restart ecosystem.config.js --env production"

@@ -1,3 +1,5 @@
+import { ExecFileOptionsWithStringEncoding } from "child_process";
+
 export interface IBoardGame {
   id: number;
   name: string;
@@ -17,4 +19,19 @@ export interface IBoardGame {
   // vue: number;
   // trend: boolean;
   // userId: number;
+}
+
+export interface IconSvgProps {
+  size: number;
+  width: string | number | undefined;
+  height: string | number | undefined;
+}
+
+export interface Opinions {
+  id: number;
+  rating: number;
+  comment: ExecFileOptionsWithStringEncoding;
+  seen_price: number;
+  created_at: string;
+  pseudo: string;
 }

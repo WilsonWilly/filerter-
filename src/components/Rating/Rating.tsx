@@ -1,10 +1,14 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { detailsGame } from '../../assets/detailsGame';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import { detailsGame } from "../../assets/detailsGame";
 
-export default function StarRating({ goldRating }) {
+interface goldRatingProps {
+  goldRating: number;
+}
+
+export default function StarRating({ goldRating }: goldRatingProps) {
   const stars = [];
 
   for (let i = 0; i < 5; i++) {
