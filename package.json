@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint \"src/app/**/*.{ts,tsx}\" --fix",
     "lint:fix": "next lint --fix",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "build:no-type-check": "next build --no-verify"
   },
   "dependencies": {
     "@nextui-org/react": "^2.4.2",
