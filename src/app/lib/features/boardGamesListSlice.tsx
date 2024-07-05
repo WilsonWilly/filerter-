@@ -4,7 +4,7 @@ import { IBoardGame } from '../../../types/boardGame';
 import { thunkFetchBoardGamesList } from '../middlewares/thunkFetchBoardGamesList';
 
 interface BoardGamesState {
-  boardGamesList: IBoardGame[];
+  boardGamesList: IBoardGame[] | [];
   error: string;
   isLoading: boolean;
 }

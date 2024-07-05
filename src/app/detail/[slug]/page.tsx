@@ -14,18 +14,27 @@ import { thunkFetchBoardGameDetails } from '@/app/lib/middlewares/thunkFetchBoar
 export default function BoardGame() {
   const dispatch = useAppDispatch();
 
-  // On récupère l'état de chargement
-  const isLoading = useAppSelector((state) => state.boardGameDetails.isLoading);
+  // On récupère la liste de jeux qui est dans le store Redux pour vérifier si le slug existe bien
+  const boardGames = useAppSelector((state) => state.boardGames.boardGamesList);
+  console.log(boardGames);
 
   // On récupère le slug depuis l'url
   const { slug } = useParams<{ slug: string }>();
   console.log(slug);
 
-  useEffect(() => {
-    if (slug) {
-      dispatch(thunkFetchBoardGameDetails(slug));
-    }
-  }, []);
+  // On vérifie dans la liste de jeux si le slug existe bien
+  if (boardGames) {
+    const slugFounded = boardGames.find((game) => game.slug === slug);
+    console.log(slugFounded);
+
+    if (slugFounded)
+      useEffect(() => {
+        dispatch(thunkFetchBoardGameDetails(slug));
+      }, []);
+  }
+
+  // On récupère l'état de chargement
+  const isLoading = useAppSelector((state) => state.boardGameDetails.isLoading);
 
   const detailsGame = useAppSelector(
     (state) => state.boardGameDetails.boardGameDetails
