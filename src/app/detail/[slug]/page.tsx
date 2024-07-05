@@ -36,6 +36,7 @@ export default function BoardGame() {
   // On récupère l'état de chargement
   const isLoading = useAppSelector((state) => state.boardGameDetails.isLoading);
 
+  // On récupère le détail du jeu depuis le store Redux
   const detailsGame = useAppSelector(
     (state) => state.boardGameDetails.boardGameDetails
   );
