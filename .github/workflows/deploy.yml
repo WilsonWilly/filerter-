@@ -46,7 +46,7 @@ jobs:
         run: npx next --version
 
       - name: Build the project
-        run: npx next build --no-check
+        run: npm run build:no-type-check
 
       - name: Deploy to server
         env:
