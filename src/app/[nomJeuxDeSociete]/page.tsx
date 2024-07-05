@@ -18,7 +18,7 @@ import { detailsGame } from "../../assets/detailsGame";
 export default function BoardGame() {
   return (
     <main className="flex text-sm flex-col items-center justify-center p-2 text-black ">
-      <section className="w-full flex justify-between mb-1">
+      {/* <section className="w-full flex justify-between mb-1">
         <div className="w-1/2 text-center text-3xl py-2  rounded-md p-4">
           {detailsGame.game.name}
         </div>
@@ -82,7 +82,7 @@ export default function BoardGame() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
