@@ -5,6 +5,16 @@ import ModalOpinion from "@/components/Modal/ModalOpinion";
 import Rating from "@/components/Rating/Rating";
 import { detailsGame } from "../../assets/detailsGame";
 
+// interface OpinionsProps {
+//   opinion[]:
+//   id: number;
+//   rating: number;
+//   comment: string;
+//   seen_price: number;
+//   created_at: string;
+//   pseudo: string;
+// }
+
 export default function BoardGame() {
   return (
     <main className="flex text-sm flex-col items-center justify-center p-2 text-black ">
