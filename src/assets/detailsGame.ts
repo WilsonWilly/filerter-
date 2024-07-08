@@ -30,7 +30,7 @@ export const detailsGame = {
       pseudo: "Jacky",
     },
     {
-      id: 1,
+      id: 2,
       rating: 4,
       comment: "jeu trop bien !",
       seen_price: 33.5,
@@ -38,7 +38,7 @@ export const detailsGame = {
       pseudo: "Michel",
     },
     {
-      id: 1,
+      id: 3,
       rating: 1,
       comment: "la tarif fait trop mal !",
       seen_price: 69.5,
