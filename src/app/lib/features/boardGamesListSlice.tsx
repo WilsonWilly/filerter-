@@ -13,7 +13,7 @@ interface BoardGamesState {
 
 // State initial sans jeux
 const initialState: BoardGamesState = {
-  boardGamesList: boardGamesList,
+  boardGamesList: [],
   error: "",
   isLoading: true,
 };
