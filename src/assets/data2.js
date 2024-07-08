@@ -1,4 +1,4 @@
-export const boardGamesList = [
+const boardGamesList = [
   {
     id: 142,
     name: "Kluster",
@@ -501,3 +501,5 @@ export const boardGamesList = [
     time: 30,
   },
 ];
+
+export default boardGamesList;
